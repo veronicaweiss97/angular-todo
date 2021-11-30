@@ -1,0 +1,17 @@
+<h1 style='text-align: center;' @appear>Todo App</h1>
+<div class='window' >
+  <form (ngSubmit)="addTodo($event)">
+    <input type="text" placeholder="Add todo..." (change)="getInputValue($event)" name="inputTodoText" value='{{this.inputValue}}'>
+    <button type='submit' class='btn'>Add</button>
+  </form>
+  <div class='todolist'>
+      <li
+        @fade
+        @slide
+        *ngFor='let t of todos; let idx = index'
+        [ngClass]="{'isChecked': this.t.isChecked}"
+        ><input type="checkbox" (change)="t.isChecked = !t.isChecked">
+          {{t.title}}
+        <p class='remove' (click)="onRemoveItem(idx)">&times;</p></li>
+  </div>
+</div>
