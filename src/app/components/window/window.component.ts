@@ -24,7 +24,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
         style({transform: 'translateX(20px)'}),
         animate(1000)
       ])
-    ]),
+    ]),//s
     trigger('appear', [
       transition('void => *', [
         style({transform: 'translateY(-80px)'}),
